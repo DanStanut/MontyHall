@@ -35,7 +35,6 @@ function validateInput() {
     if (enteredNumber < 2 || enteredNumber > 10) {
         alert("Please give a number between 2 and 10");
     } else {
-        enteredNumber
         winner = Math.round(Math.random() * (enteredNumber - 1))
         document.getElementById("infoText").innerHTML = "Please choose a button below!"
         generateButtons(enteredNumber)
