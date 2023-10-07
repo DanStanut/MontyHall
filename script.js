@@ -12,7 +12,6 @@ function buttonPressed() {
 }
 
 function generateButtons(noBut) {
-    var myCol = document.getElementById("buttonsCol")
     document.getElementById("startButton").className = "btn btn-secondary disabled"
     for (let i = 0; i < noBut; ++i) {
         var btn = document.createElement("button")
