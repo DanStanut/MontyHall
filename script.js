@@ -1,7 +1,7 @@
 var winner
 
 function buttonPressed() {
-    var pressedButtonId = this.id
+    let pressedButtonId = this.id
     if (pressedButtonId == winner) {
         document.getElementById("infoText").innerHTML = "You WIN !!!"
         this.className = "btn btn-success"
@@ -14,13 +14,13 @@ function buttonPressed() {
 function generateButtons(noBut) {
     document.getElementById("startButton").className = "btn btn-secondary disabled"
     for (let i = 0; i < noBut; ++i) {
-        var btn = document.createElement("button")
-        var column = document.createElement("div")
-        var centerB = document.createElement("div")
+        let btn = document.createElement("button")
+        let column = document.createElement("div")
+        let centerB = document.createElement("div")
         btn.className = "btn btn-info"
+        btn.id = i
         btn.onclick = buttonPressed
         btn.innerHTML = "Pick ME"
-        btn.id = i
         column.className = "col"
         centerB.className = "text-center"
         centerB.appendChild(btn)
@@ -30,7 +30,7 @@ function generateButtons(noBut) {
 }
 
 function validateInput() {
-    var enteredNumber = document.getElementById("numberOfButtons").value
+    let enteredNumber = document.getElementById("numberOfButtons").value
     if (enteredNumber < 2 || enteredNumber > 10) {
         alert("Please give a number between 2 and 10");
     } else {
