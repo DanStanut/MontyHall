@@ -1,12 +1,15 @@
 var winner;
 
+function generateOutput(message, buttonType, id) {
+    document.getElementById("infoText").innerHTML = message;
+    document.getElementById("Button_" + id).className = buttonType;
+}
+
 function buttonPressed(pressedButtonId) {
     if (pressedButtonId == winner) {
-        document.getElementById("infoText").innerHTML = "You WIN !!!";
-        document.getElementById("Button_" + pressedButtonId).className = "btn btn-success";
+        generateOutput("You WIN !!!", "btn btn-success", pressedButtonId);
     } else {
-        document.getElementById("infoText").innerHTML = "Goat behind this door";
-        document.getElementById("Button_" + pressedButtonId).className = "btn btn-secondary disabled";
+        generateOutput("Goat behind this door", "btn btn-secondary disabled", pressedButtonId);
     }
 }
 
